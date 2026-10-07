@@ -1,4 +1,4 @@
-# 💈 Barbearia — API de Agendamentos
+# Barbearia — API de Agendamentos
 
 API REST para gerenciar os agendamentos de uma barbearia: cadastro de serviços e clientes, marcação de horários com verificação de conflito e cancelamento de agendamentos.
 
@@ -6,7 +6,7 @@ API REST para gerenciar os agendamentos de uma barbearia: cadastro de serviços 
 
 ---
 
-## 📋 Sumário
+##  Sumário
 
 - [Funcionalidades](#-funcionalidades)
 - [Tecnologias](#-tecnologias)
@@ -21,7 +21,7 @@ API REST para gerenciar os agendamentos de uma barbearia: cadastro de serviços 
 
 ---
 
-## ✨ Funcionalidades
+##  Funcionalidades
 
 - **Serviços:** cadastro e listagem dos serviços oferecidos (ex.: corte, barba), com preço.
 - **Clientes:** cadastro e listagem de clientes, com **e-mail único**.
@@ -34,12 +34,12 @@ API REST para gerenciar os agendamentos de uma barbearia: cadastro de serviços 
 
 ---
 
-## 🛠 Tecnologias
+## Tecnologias
 
 | Tecnologia | Uso no projeto |
 |---|---|
 | **Java 25** | Linguagem |
-| **Spring Boot 4** | Base da aplicação |
+| **Spring Boot 4.1** | Base da aplicação |
 | **Spring Web MVC** | Criação da API REST |
 | **Spring Data JPA / Hibernate** | Persistência e mapeamento objeto-relacional |
 | **Jakarta Bean Validation** | Validação dos dados de entrada |
@@ -48,7 +48,7 @@ API REST para gerenciar os agendamentos de uma barbearia: cadastro de serviços 
 
 ---
 
-## 🧱 Arquitetura
+## Arquitetura
 
 O projeto segue a **arquitetura em camadas**, em que cada camada tem uma responsabilidade:
 
@@ -92,7 +92,7 @@ Cada agendamento pertence a um cliente e a um serviço, por meio de chaves estra
 
 ---
 
-## 🔗 Endpoints
+## Endpoints
 
 ### Serviços
 
@@ -119,7 +119,7 @@ Cada agendamento pertence a um cliente e a um serviço, por meio de chaves estra
 
 ---
 
-## 📨 Exemplos de requisição
+## Exemplos de requisição
 
 ### Cadastrar serviço
 
@@ -206,7 +206,7 @@ Resposta `200 OK`: o agendamento com `"status": "CANCELADO"`. O horário volta a
 
 ---
 
-## ⚠️ Tratamento de erros
+## Tratamento de erros
 
 Todos os erros seguem o mesmo formato:
 
@@ -240,7 +240,7 @@ Erros de validação incluem o campo `campos`, com a mensagem de cada campo inv�
 
 ---
 
-## 🚀 Como rodar localmente
+## Como rodar localmente
 
 ### Pré-requisitos
 
@@ -308,7 +308,7 @@ A API estará disponível em **http://localhost:8080**.
 
 ---
 
-## 📸 Demonstração
+## Demonstração
 
 <!-- Adicione os prints na pasta docs/images e descomente as linhas abaixo -->
 <!-- ![Criando um agendamento](docs/images/criar-agendamento.png) -->
@@ -318,7 +318,7 @@ A API estará disponível em **http://localhost:8080**.
 
 ---
 
-## 🗺 Próximos passos
+## Próximos passos
 
 - [ ] Testes unitários com JUnit e Mockito
 - [ ] Documentação interativa com Swagger / OpenAPI
@@ -328,9 +328,9 @@ A API estará disponível em **http://localhost:8080**.
 
 ---
 
-## 👤 Autor
+## Autor
 
-**[Seu nome]**
+Pedro Lucas Oliveira Comper
 
-- LinkedIn: [linkedin.com/in/seu-perfil](https://www.linkedin.com/in/seu-perfil)
+- LinkedIn: www.linkedin.com/in/pedro-lucas-oliveira-comper-92b42426b
 - GitHub: [@PedroComper](https://github.com/PedroComper)
