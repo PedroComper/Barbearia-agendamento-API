@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pedrocomper.barbearia.dto.AgendamentoRequest;
-import com.pedrocomper.barbearia.model.Agendamento;
+import com.pedrocomper.barbearia.dto.AgendamentoResponse;
 import com.pedrocomper.barbearia.service.AgendamentoService;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -31,22 +31,22 @@ public class AgendamentoController {
     }
 
     @GetMapping
-    public List<Agendamento> listar() {
-        return agendamentoService.listar();
+    public List<AgendamentoResponse> listar() {
+        return agendamentoService.listar().stream().map(AgendamentoResponse::de).toList();
     }
 
     @GetMapping("/{id}")
-    public Agendamento buscarPorId(@PathVariable Long id) {
-        return agendamentoService.buscarPorId(id);
+    public AgendamentoResponse buscarPorId(@PathVariable Long id) {
+        return AgendamentoResponse.de(agendamentoService.buscarPorId(id));
     }
 
     @PostMapping
-    public ResponseEntity<Agendamento> cadastrar(@Valid @RequestBody AgendamentoRequest request) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(agendamentoService.cadastrar(request));
+    public ResponseEntity<AgendamentoResponse> cadastrar(@Valid @RequestBody AgendamentoRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(AgendamentoResponse.de(agendamentoService.cadastrar(request)));
     }
 
     @PatchMapping("/{id}/cancelar")
-    public Agendamento cancelar(@PathVariable Long id) {
-        return agendamentoService.cancelar(id);
+    public AgendamentoResponse cancelar(@PathVariable Long id) {
+        return AgendamentoResponse.de(agendamentoService.cancelar(id));
     }
 }

@@ -76,8 +76,9 @@ Os erros lançados em qualquer camada são capturados por um **`@RestControllerA
 
 ```
 src/main/java/com/pedrocomper/barbearia
+├── config       # Configurações (documentação OpenAPI)
 ├── controller   # Endpoints REST
-├── dto          # Objetos de entrada e de resposta de erro
+├── dto          # Objetos de entrada (Request) e saída (Response) da API
 ├── exception    # Exceções de negócio e handler global
 ├── model        # Entidades JPA (Servico, Usuario, Agendamento)
 ├── repository   # Interfaces Spring Data JPA
@@ -326,7 +327,7 @@ A API estará disponível em **http://localhost:8080**, e a documentação Swagg
 
 - [x] Testes unitários com JUnit e Mockito
 - [x] Documentação interativa com Swagger / OpenAPI
-- [ ] DTOs de entrada e saída para todas as entidades
+- [x] DTOs de entrada e saída para todas as entidades
 - [ ] Migrações de banco de dados com Flyway
 - [ ] Interface web para gerenciar os agendamentos
 

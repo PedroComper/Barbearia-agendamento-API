@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.pedrocomper.barbearia.dto.ServicoRequest;
 import com.pedrocomper.barbearia.exception.RecursoNaoEncontradoException;
 import com.pedrocomper.barbearia.model.Servico;
 import com.pedrocomper.barbearia.repository.ServicoRepository;
@@ -30,7 +31,10 @@ public class ServicoService {
     }
 
     @Transactional
-    public Servico cadastrar(Servico servico) {
+    public Servico cadastrar(ServicoRequest request) {
+        Servico servico = new Servico();
+        servico.setNome(request.nome());
+        servico.setPreco(request.preco());
         return servicoRepository.save(servico);
     }
 }

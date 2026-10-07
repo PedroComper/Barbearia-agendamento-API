@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pedrocomper.barbearia.model.Servico;
+import com.pedrocomper.barbearia.dto.ServicoRequest;
+import com.pedrocomper.barbearia.dto.ServicoResponse;
 import com.pedrocomper.barbearia.service.ServicoService;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -28,12 +29,12 @@ public class ServicoController {
     }
 
     @GetMapping
-    public List<Servico> listar() {
-        return servicoService.listar();
+    public List<ServicoResponse> listar() {
+        return servicoService.listar().stream().map(ServicoResponse::de).toList();
     }
 
     @PostMapping
-    public ResponseEntity<Servico> cadastrar(@Valid @RequestBody Servico servico) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(servicoService.cadastrar(servico));
+    public ResponseEntity<ServicoResponse> cadastrar(@Valid @RequestBody ServicoRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(ServicoResponse.de(servicoService.cadastrar(request)));
     }
 }

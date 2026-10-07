@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.pedrocomper.barbearia.model.Usuario;
+import com.pedrocomper.barbearia.dto.UsuarioRequest;
+import com.pedrocomper.barbearia.dto.UsuarioResponse;
 import com.pedrocomper.barbearia.service.UsuarioService;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -28,12 +29,12 @@ public class UsuarioController {
     }
 
     @GetMapping
-    public List<Usuario> listar() {
-        return usuarioService.listar();
+    public List<UsuarioResponse> listar() {
+        return usuarioService.listar().stream().map(UsuarioResponse::de).toList();
     }
 
     @PostMapping
-    public ResponseEntity<Usuario> cadastrar(@Valid @RequestBody Usuario usuario) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.cadastrar(usuario));
+    public ResponseEntity<UsuarioResponse> cadastrar(@Valid @RequestBody UsuarioRequest request) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(UsuarioResponse.de(usuarioService.cadastrar(request)));
     }
 }

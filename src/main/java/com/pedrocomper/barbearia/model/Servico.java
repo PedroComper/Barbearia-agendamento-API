@@ -7,11 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
 
 @Entity
 public class Servico {
@@ -20,14 +15,9 @@ public class Servico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "O nome é obrigatório")
-    @Size(max = 100, message = "O nome deve ter no máximo 100 caracteres")
     @Column(nullable = false, length = 100)
     private String nome;
 
-    @NotNull(message = "O preço é obrigatório")
-    @Positive(message = "O preço deve ser maior que zero")
-    @Digits(integer = 8, fraction = 2, message = "O preço deve ter no máximo 8 dígitos inteiros e 2 decimais")
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal preco;
 
