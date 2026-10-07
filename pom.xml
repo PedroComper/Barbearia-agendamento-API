@@ -8,11 +8,11 @@
 		<version>4.1.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>main</artifactId>
+	<groupId>com.pedrocomper</groupId>
+	<artifactId>barbearia-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>main</name>
-	<description/>
+	<name>barbearia-api</name>
+	<description>API REST de agendamentos para barbearia</description>
 	<url/>
 	<licenses>
 		<license/>

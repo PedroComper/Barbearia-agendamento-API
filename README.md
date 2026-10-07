@@ -73,7 +73,7 @@ Os erros lançados em qualquer camada são capturados por um **`@RestControllerA
 ### Estrutura de pacotes
 
 ```
-src/main/java/com/example/main
+src/main/java/com/pedrocomper/barbearia
 ├── controller   # Endpoints REST
 ├── dto          # Objetos de entrada e de resposta de erro
 ├── exception    # Exceções de negócio e handler global
