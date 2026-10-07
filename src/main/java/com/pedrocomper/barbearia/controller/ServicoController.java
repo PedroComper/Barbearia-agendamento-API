@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pedrocomper.barbearia.model.Servico;
 import com.pedrocomper.barbearia.service.ServicoService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
+@Tag(name = "Serviços", description = "Serviços oferecidos pela barbearia")
 @RestController
 @RequestMapping("/servicos")
 public class ServicoController {

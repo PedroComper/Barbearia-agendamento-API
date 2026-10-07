@@ -44,6 +44,8 @@ API REST para gerenciar os agendamentos de uma barbearia: cadastro de serviços 
 | **Spring Data JPA / Hibernate** | Persistência e mapeamento objeto-relacional |
 | **Jakarta Bean Validation** | Validação dos dados de entrada |
 | **SQL Server** | Banco de dados relacional |
+| **springdoc-openapi (Swagger)** | Documentação interativa da API |
+| **JUnit + Mockito + AssertJ** | Testes unitários |
 | **Maven** | Gerenciamento de dependências e build |
 
 ---
@@ -116,6 +118,8 @@ Cada agendamento pertence a um cliente e a um serviço, por meio de chaves estra
 | `GET` | `/agendamentos/{id}` | Busca um agendamento pelo ID |
 | `POST` | `/agendamentos` | Cria um agendamento |
 | `PATCH` | `/agendamentos/{id}/cancelar` | Cancela um agendamento |
+
+> 📖 **Documentação interativa:** com a aplicação rodando, acesse **http://localhost:8080/swagger-ui.html** para ver todas as rotas, os formatos de JSON e testar as requisições direto pelo navegador.
 
 ---
 
@@ -304,7 +308,7 @@ DB_PASSWORD=sua_senha
 mvnw.cmd spring-boot:run
 ```
 
-A API estará disponível em **http://localhost:8080**.
+A API estará disponível em **http://localhost:8080**, e a documentação Swagger em **http://localhost:8080/swagger-ui.html**.
 
 ---
 
@@ -320,8 +324,8 @@ A API estará disponível em **http://localhost:8080**.
 
 ## Próximos passos
 
-- [ ] Testes unitários com JUnit e Mockito
-- [ ] Documentação interativa com Swagger / OpenAPI
+- [x] Testes unitários com JUnit e Mockito
+- [x] Documentação interativa com Swagger / OpenAPI
 - [ ] DTOs de entrada e saída para todas as entidades
 - [ ] Migrações de banco de dados com Flyway
 - [ ] Interface web para gerenciar os agendamentos

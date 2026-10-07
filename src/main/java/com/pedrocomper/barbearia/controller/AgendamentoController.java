@@ -16,8 +16,10 @@ import com.pedrocomper.barbearia.dto.AgendamentoRequest;
 import com.pedrocomper.barbearia.model.Agendamento;
 import com.pedrocomper.barbearia.service.AgendamentoService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 
+@Tag(name = "Agendamentos", description = "Marcação, consulta e cancelamento de horários")
 @RestController
 @RequestMapping("/agendamentos")
 public class AgendamentoController {
