@@ -44,6 +44,7 @@ API REST para gerenciar os agendamentos de uma barbearia: cadastro de serviços 
 | **Spring Data JPA / Hibernate** | Persistência e mapeamento objeto-relacional |
 | **Jakarta Bean Validation** | Validação dos dados de entrada |
 | **SQL Server** | Banco de dados relacional |
+| **Flyway** | Migrações versionadas do banco de dados |
 | **springdoc-openapi (Swagger)** | Documentação interativa da API |
 | **JUnit + Mockito + AssertJ** | Testes unitários |
 | **Maven** | Gerenciamento de dependências e build |
@@ -280,7 +281,7 @@ ALTER ROLE db_owner ADD MEMBER seu_usuario;
 GO
 ```
 
-As tabelas são criadas automaticamente pelo Hibernate na primeira execução.
+As tabelas são criadas automaticamente pelo **Flyway** na primeira execução, a partir dos scripts versionados em `src/main/resources/db/migration`.
 
 ### 3. Configurar as credenciais
 
@@ -328,7 +329,7 @@ A API estará disponível em **http://localhost:8080**, e a documentação Swagg
 - [x] Testes unitários com JUnit e Mockito
 - [x] Documentação interativa com Swagger / OpenAPI
 - [x] DTOs de entrada e saída para todas as entidades
-- [ ] Migrações de banco de dados com Flyway
+- [x] Migrações de banco de dados com Flyway
 - [ ] Interface web para gerenciar os agendamentos
 
 ---
